@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mahat</h1>
+            <div class="team">
+                <div>Azrian Rifqi Radhitya (1301223292)</div>
+                <div>M. Haziem Nabawi (1301220423)</div>
+                <div>Rafi Ainulfitrah T (1301223470)</div>
+            </div>
+        </header>
+        <section class="input-section">
+            <h2>Input Makanan</h2>
+            <div class="input-group">
+                <input type="text" id="namaMakanan" placeholder="Isi nama makanan">
+                <input type="text" id="harga" placeholder="Isi Harga" oninput="formatRupiah(this)">
+                <input type="number" id="kalori" placeholder="Isi Kalori">
+                <input type="number" id="protein" placeholder="Isi Protein">
+                <input type="number" id="lemak" placeholder="Isi Lemak">
+                <select id="kolesterol">
+                    <option value="" disabled selected>Tingkat kolesterol</option>
+                    <option value="rendah">Rendah</option>
+                    <option value="sedang">Sedang</option>
+                    <option value="tinggi">Tinggi</option>
+                </select>
+                <button onclick="addFood()">Tambah</button>
+            </div>
+        </section>
+        <section class="history-section">
+            <h2>Riwayat Input Makanan</h2>
+            <div class="history-container" id="historyContainer">
+                <!-- History items will be added here -->
+             
+            </div>
+        </section>
+        <section class="input-section">
+            <h2>Input Aktivitas</h2>
+            <div class="input-group">
+                <input type="text" id="namaAktivitas" placeholder="Nama Aktivitas">
+                <input type="number" id="kaloriAktivitas" placeholder="Kalori">
+                <button onclick="addActivity()">Tambah</button>
+            </div>
+        </section>
+        <section class="history-section">
+            <h2>Riwayat Input Aktivitas</h2>
+            <div class="history-container" id="activityContainer">
+                <div class="history-item">
+                   
+                </div>
+            </div>
+        </section>
+        <section class="total-section">
+          
+            <div class="total-info">
+                <h2>Jumlah makanan: <span id="totalMakananTersedia">10</span></h2>
+                <h2>Jumlah Kalori Terbakar: <span id="totalKaloriTerbakar">0</span></h2>
+            </div>
+        </section>
+   <section class="result-section">
+            <h2 align="center">Jadwal yang direkomendasikan</h2>
+            <div class="result-container">
+                <div class="result-box" id="greedyBox">
+                    <h3>Hasil Greedy</h3>
+                    <p>Urutan hidangan yang terpilih: </p>
+                    <div id="greedyResults"></div>
+                    <p id="greedySteps"></p> <!-- Add this element to display greedy steps -->
+                </div>
+                <div class="result-box" id="backtrackingBox">
+                    <h3>Hasil Backtracking</h3>
+                    <p>Urutan hidangan yang terpilih: </p>
+                    <div id="backtrackingResults"></div>
+                    <p id="backtrackingSteps"></p> <!-- Add this element to display backtracking steps -->
+                    <p id="backtrackingTime"></p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
