@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, jsonify
 import time
 app = Flask(__name__)
