@@ -1,4 +1,4 @@
-# Tugas-Besar-Strategi-Algoritma
+# Tugas Besar Strategi Algoritma
 
 Anggota kelompok:
 1. Azrian Rifqi Radhitya 		        (1301223292)
